@@ -1,7 +1,7 @@
 
 public class TestFibonacci {
 	public static void main(String [] args) {
-		/* 請利運遞迴的方式撰寫費式數列
+		/* 請利用遞迴的方式撰寫費式數列
 		*  f0 = 0 ，f1 = 1
 		*  formula : fn = fn-1 + fn-2
 		*/
