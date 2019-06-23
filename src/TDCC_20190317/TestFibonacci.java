@@ -1,3 +1,4 @@
+package TDCC_20190317;
 
 public class TestFibonacci {
 	public static void main(String [] args) {
@@ -6,7 +7,7 @@ public class TestFibonacci {
 		*  formula : fn = fn-1 + fn-2
 		*/
 		
-		System.out.println("fib :　"+fib(1));
+		System.out.println("fib :��"+fib(1));
 		//0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233....
 		
 	}
