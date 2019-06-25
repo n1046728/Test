@@ -1,4 +1,4 @@
-
+package TCB_201902;
 public class TestBinarySearchTree {
 //二元搜尋樹(Binary Search Tree)是指一棵二元樹狀資料結構，具有下列性質：
 //1. 若任意節點的左子樹不空，則左子樹上所有節點的值均小於它的根節點的值；
