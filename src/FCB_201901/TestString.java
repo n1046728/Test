@@ -33,32 +33,32 @@ public class TestString {
 		StringBuffer buffer = new StringBuffer();
 		//test array is correct
 //		for(int i = 0 ;i<dates.length;i++){
-//			System.out.println(dates[i] + " , "+checkDateItenLen(dates[i]));
+//			System.out.println(dates[i] + " , "+checkDateItemLen(dates[i]));
 //		}
 				
-		if(checkDateItenLen(dates[2])==2)
+		if(checkDateItemLen(dates[2])==2)
 			buffer.append(cov[Integer.parseInt(dates[2].substring(0, 1))] 
 					+ cov[Integer.parseInt(dates[2].substring(1, 2))]+"年" ); 
 		else
 			buffer.append(cov[0] + cov[Integer.parseInt(dates[2].substring(1, 2))] +"年") ; 
 		
 		
-		if(checkDateItenLen(dates[1])==2)
+		if(checkDateItemLen(dates[1])==2)
 			buffer.append("十" + cov[Integer.parseInt(dates[1].substring(1, 2))]+"月" ) ; 
 		else
 			buffer.append(cov[Integer.parseInt(dates[1].substring(1, 2))]+"月" ) ;;
 		
 		
-		if(checkDateItenLen(dates[0])==1)
+		if(checkDateItemLen(dates[0])==1)
 			buffer.append(cov[Integer.parseInt(dates[1].substring(1, 2))]+"日" ) ; 
-		else if(checkDateItenLen(dates[0])==2 && dates[0].charAt(0) == 49)
+		else if(checkDateItemLen(dates[0])==2 && dates[0].charAt(0) == 49)
 			buffer.append("十"+cov[Integer.parseInt(dates[0].substring(1, 2))]+"日" ) ;
 		else
 			buffer.append(cov[Integer.parseInt(dates[1].substring(0, 1))]+"十"+cov[Integer.parseInt(dates[1].substring(1, 2))]+"日" ) ;
 		
 		System.out.println(buffer);
 	}
-	public static int checkDateItenLen(String str){
+	public static int checkDateItemLen(String str){
 		return Integer.valueOf(str).toString().length();
 	}
 }
