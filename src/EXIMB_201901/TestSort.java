@@ -46,6 +46,7 @@ public class TestSort {
 		}
 		System.out.println("所輸入的資料經過排序如下：");
 		Collections.sort(list);
+		//Collections.reverse(list);
 		list.forEach(s->System.out.print(s+" "));
 	}
 
