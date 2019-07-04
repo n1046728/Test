@@ -1,4 +1,8 @@
 package TAIFEX_201401;
+
+import java.util.HashMap;
+import java.util.Map;
+
 //題目二：
 //請寫出下列 VB.NET 程式碼執行結果：【25 分】
 //Module Module1
@@ -22,5 +26,31 @@ package TAIFEX_201401;
 // End Function
 //End Module
 public class TestFibonacci {
-
+	public static Map<Integer, String> dic =new HashMap<>();
+		//靜態初始化區塊，若沒加static則為物件初始化區塊
+		static{
+			dic.put(0, "a");
+			dic.put(1, "b");
+			dic.put(2, "c");
+		}
+	public static void main(String args []) {
+		//dic.forEach((u,v)->System.out.println(u+","+v));
+		//注意遞迴執行順序左：5->4->3->2->2  右：3->2
+		fibonacci(5);
+	}
+	public static int fibonacci(int i ) {
+		if(i ==0)
+			return 0;
+		else if(i == 1)
+			return 1;
+		else {
+			//System.out.println(i);
+			System.out.println(dic.get(i%3));
+		}
+			
+		
+		return fibonacci(i-1)+fibonacci(i-2);
+		
+	}
 }
+
