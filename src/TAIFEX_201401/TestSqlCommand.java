@@ -7,24 +7,26 @@ package TAIFEX_201401;
 //容如下，請完成方框內程式：【10 分】
 //private void BtnCalculate_Click(object sender, EventArgs e)
 //{
-// using (SqlConnection cn = new SqlConnection())
-// {
-// try
-// {
-// cn.ConnectionString = @"Data Source=(LocalDB)\v11.0;" +
-// "AttachDbFilename=|DataDirectory|StockTrade.mdf;" +
-// "Integrated Security=True";
-// SqlCommand cmd = ;
-// cn.Open();
-// cmd.ExecuteNonQuery();
-// cn.Close();
-// }
-// catch (Exception ex)
-// {
-// MessageBox.Show(ex.Message);
-// }
-// }
+//		using (SqlConnection cn = new SqlConnection())
+// 		{
+// 			try
+// 			{
+// 				cn.ConnectionString = @"Data Source=(LocalDB)\v11.0;" +
+// 				"AttachDbFilename=|DataDirectory|StockTrade.mdf;" +
+// 				"Integrated Security=True";
+// 				SqlCommand cmd = ;
+// 					cn.Open();
+// 					cmd.ExecuteNonQuery();
+// 					cn.Close();
+// 			}
+// 			catch (Exception ex)
+// 			{
+// 				MessageBox.Show(ex.Message);
+// 			}
+// 		}
 // }
 public class TestSqlCommand {
-
+	public static void main(String args[]){
+		
+	}
 }
