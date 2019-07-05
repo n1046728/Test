@@ -26,7 +26,77 @@ package TAIFEX_201401;
 // 		}
 // }
 public class TestSqlCommand {
-	public static void main(String args[]){
+	
+	public static void main(String[] args) {
+		//三、(一)計算
 		
+		//BtnCalculate_Click();
+		
+		//三、(二) 
+		
+//-------create stored procedure------//
+//		CREATE PROCEDURE GetStockByQty
+//			@MIN int,@MAX int 
+//		AS
+//		BEGIN
+//			SET NOCOUNT ON;
+//			SELECT * FROM Stock
+//			WHERE volumne > @MIN AND volumne <@MAX
+//			ORDER BY volumne desc
+//		END
+//		GO
+		
+		BtnOk_Click(2,15);
+
 	}
+	public static void BtnCalculate_Click() {
+		String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+		String url = "jdbc:sqlserver://xxx.xxx.xxx.xxx:1433;databaseName=myDbName";
+		String url2 = "jdbc:sqlserver://servername;databaseName=TSQL";
+		String user = "sa";
+		String password = "1qaz2wsx";
+		
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			Connection con = DriverManager.getConnection(url2, user, password);
+			String command ="UPDATE Stock "
+					+ "SET high=A.high,low = A.low,volumne=A.volumne "
+					+ "FROM (SELECT stock_code,MAX(trade_price) high,MIN(trade_price) low,SUM(volumne) volumne "
+					+ "FROM Trade "
+					+ "Group by stock_code) AS A "
+					+ "WHERE Stock.stock_code = A.stock_code ";
+			//System.out.println(command);
+			PreparedStatement ps = con.prepareStatement(command);
+					  
+			int rs = ps.executeUpdate();
+			System.out.println("異動筆數 : "+rs);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void BtnOk_Click(int min ,int max) {
+		String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+		String url = "jdbc:sqlserver://xxx.xxx.xxx.xxx:1433;databaseName=myDbName";
+		String url2 = "jdbc:sqlserver://servername;databaseName=TSQL";
+		String user = "sa";
+		String password = "1qaz2wsx";
+		
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			Connection con = DriverManager.getConnection(url2, user, password);
+			CallableStatement cstmt =con.prepareCall("exec GetStockByQty ?,?");
+			cstmt.setInt(1, min);
+			cstmt.setInt(2, max);
+			System.out.println(cstmt);
+					  
+			ResultSet rs = cstmt.executeQuery();
+			while(rs.next()) {
+				System.out.println(rs.getString("stock_code"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }
