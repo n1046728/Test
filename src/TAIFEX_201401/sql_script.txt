@@ -17,3 +17,22 @@ CREATE TABLE [dbo].[Trade](
 
 GO
 
+CREATE PROCEDURE [dbo].[GetStockByQty]
+	@MIN int,@MAX int 
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT * FROM Stock
+	WHERE volumne > @MIN AND volumne <@MAX
+	ORDER BY volumne desc
+END
+
+GO
+
+CREATE TABLE [dbo].[BankAccount](
+	[account] [varchar](50) NOT NULL,
+	[name] [varchar](50) NOT NULL,
+	[balance] [decimal](18, 2) NOT NULL
+) ON [PRIMARY]
+
+GO
