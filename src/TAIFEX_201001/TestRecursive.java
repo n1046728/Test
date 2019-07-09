@@ -5,5 +5,14 @@ package TAIFEX_201001;
 //(Please use recursive program) 10
 //2, 2, 4, 6, 10, 16, 26, …
 public class TestRecursive {
-
+	public static void main(String [] args) {
+		System.out.println(fibonacci(4));
+	} 
+	public static int fibonacci(int num) {
+		if(num==0 || num == 1) {
+			return 2;
+		}
+		
+		return fibonacci(num-1)+fibonacci(num-2);
+	} 
 }
