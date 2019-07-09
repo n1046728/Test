@@ -16,11 +16,22 @@ package TAIFEX_201001;
 //c. What should be noticed when inheriting from the base class? 4 
 //Ans:Java不支援多重繼承		
 //		
-//第八題
-//Please design a polygon class as base, and then design a rectangle class and a triangle class
-//that inherited from the polygon class. Next, please write a program to compute the area for each
-//polygon. (Please use JAVA program) 10 
+//第五題
+//Please answer the following questions about JAVA programming language:
+//a. What does execute the JAVA byte codes? What are the advantages and disadvantages with
+//such mechanism? 8
+//Ans:java 為靜態語言，java的執行可分為編譯時期、載入時期、執行時期，其中編譯時期產生出來的即為java byte code
+//	  優點：跨平台、避免執行時期的簡單錯誤，缺點：程式繁瑣、彈性不足，只能檢查出執行時期的簡單錯誤
+//
+//b. The following is a JAVA error message. What’s happen and how to solve it? 7
+//HelloWorld.java:107: reference to Date is ambiguous, both class java.sql.Date in java.sql and
+//class java.util.Date in java.util match
+//Ans:因為Date 同時為兩個package都有，系統無法判別使用的對象為何，建立時可以使用fully-qualify-name來建立，避免此錯誤訊息發生
+//	  例如：java.util.Date date1 = new java.util.Date();
+//
 
 public class TestBasic {
 
 }
+
+
