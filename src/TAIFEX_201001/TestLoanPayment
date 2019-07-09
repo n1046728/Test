@@ -1,0 +1,30 @@
+package TAIFEX_201001;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+//第六題	
+//Please program a loan class with JAVA programming language. The class contains a
+//calculating payment function to calculate how much a month shall pay, and a calculating month
+//function to calculate how many months shall pay with fixed prices per month. (Round to two
+//decimal places)
+public class TestLoanPayment {
+	public static void main(String[] args) {
+		Loan loan = new Loan();
+		int amt = 10_000_000;
+		int year = 20;
+		int fixAmt = 42000;
+		System.out.println(loan.payPerMonth(new BigDecimal(amt+""), year));
+		System.out.println(loan.leftMonthToPay(new BigDecimal(amt+""), new BigDecimal(fixAmt)));
+	}
+}
+class Loan{
+	
+	public BigDecimal payPerMonth(BigDecimal loanAmt ,int year) {
+		int month = 12 *year;
+		return loanAmt.divide(new BigDecimal(month+""),2,RoundingMode.HALF_UP);
+	}
+	public BigDecimal leftMonthToPay(BigDecimal loanAmt ,BigDecimal fixedPay) {
+		return loanAmt.divide(fixedPay, 2,RoundingMode.HALF_UP);
+	}
+}
