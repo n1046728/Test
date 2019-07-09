@@ -1,4 +1,11 @@
 package TAIFEX_201401;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 //題目三：
 //豐盛證券公司欲製作一簡單功能的股票交易量查詢系統，下列為 Windows Form 中所建
 //立表單介面每個物件的命名：
