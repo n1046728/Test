@@ -1,0 +1,62 @@
+package TAIFEX_201401;
+
+public class TestPringDiamond {
+//	題目四：
+//	請回答下列問題：
+//	（一）請撰寫 C 程式，輸入一個數值後即列印出菱形狀圖案，如下列圖形：【15 分】
+//
+//	以下是程式片段，請利用 printf 指令、for 迴圈、abs 與 toascii 函數完成方
+//	框內的程式（不可使用 if 指令）
+//	#include<ctype.h>
+//	main()
+//	{
+//	int i,j,n;
+//	char s;
+//	printf("輸入數值:");
+//	scanf("%d",&n);
+//	printf("\n");
+//	getch();
+//	}
+//  		A
+//		   ABA
+//		  ABCBA
+//		   ABA
+//			A
+	public static void main(String[] args) {
+		//請輸入奇數3,5,7...
+		int input = 9;
+		
+		int downlayer = input/2;
+		int uplayer = input - downlayer;
+		System.out.println(uplayer +" , "+downlayer);
+		for(int i= 1 ;i<=uplayer;i++) {
+			printSpace(uplayer -i);
+			printChar(2*i-1);
+			System.out.println();
+		}
+		for(int i= downlayer;i>0;i--) {
+			printSpace(downlayer-i+1);
+			printChar(2*i-1);
+			System.out.println();
+		}
+		
+
+	}
+	public static void printSpace(int a ) {
+		
+		for(int i =1;i<=a;i++) {
+			System.out.print(" ");
+		}
+	}
+	public static void printChar(int a) {
+		int pre = a/2;
+		int post = a - pre;
+		
+		for(int i =0 ;i<pre;i++) {
+			System.out.print((char)(65+i));
+		}
+		for(int i =post ;i>0;i--) {
+			System.out.print((char)(64+i));
+		}
+	}
+}
