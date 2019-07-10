@@ -26,7 +26,7 @@ package TAIFEX_201001;
 //b. The following is a JAVA error message. What’s happen and how to solve it? 7
 //HelloWorld.java:107: reference to Date is ambiguous, both class java.sql.Date in java.sql and
 //class java.util.Date in java.util match
-//Ans:因為Date 同時為兩個package都有，系統無法判別使用的對象為何，建立時可以使用fully-qualify-name來建立，避免此錯誤訊息發生
+//Ans:因為Date 同時為兩個package都有，系統無法判別使用的對象為何，建立時可以使用Fully qualified name來建立，避免此錯誤訊息發生
 //	  例如：java.util.Date date1 = new java.util.Date();
 //
 
