@@ -1,3 +1,4 @@
+package Other;
 
 public class TestNineGridNum {
 //	有一個九宮格，要把1到9的數字填進去，不可以重複， 
