@@ -1,6 +1,6 @@
 package MEGABANK_201801;
 
-public class TestCostructor {
+public class TestConstructor {
 //	第一 題：
 //	請回答下
 //	列有關 JAVA 程式在類別的建構式 (Constr u ctor) 方法應用：
