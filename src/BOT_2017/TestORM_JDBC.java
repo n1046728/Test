@@ -7,12 +7,13 @@ package BOT_2017;
 //JAVA+SQL 或 .NET C#+SQL 擇一進行 。 【 25 分】
 
 //Employee
-//資料表：	E_NO Name Job_Title Salary
-//		001 Jack Manager 42000
-//		002 Mary Deputy_Manager 40000
-//		003 Tom Staff 36000
-//		004 Nancy Staff 36000
-//		005 Nakamura Staff 36000
+//資料表：
+//E_NO Name Job_Title Salary
+//001 Jack Manager 42000
+//002 Mary Deputy_Manager 40000
+//003 Tom Staff 36000
+//004 Nancy Staff 36000
+//005 Nakamura Staff 36000
 //
 //執行結果：
 //001 Jack Manager 44000.0
