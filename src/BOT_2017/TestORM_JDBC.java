@@ -1,4 +1,11 @@
 package BOT_2017;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 //第一題
 //EmpFile 資料庫的 Employee 資料表中原本儲存的人員薪資如下表所示。請為經理
 //( 加薪 2000 元，副經理 (Deputy_ 加薪 1500 元，其他員工皆加薪 1000 元，
@@ -23,8 +30,41 @@ package BOT_2017;
 //005 Nakamura Staff 37000.0
 
 public class TestORM_JDBC {
+	private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+	private static String user = "sa";
+	private static String password ="";
+	private static String url="jdbc:sqlserver://;databaseName=TSQL";
+	
+	private static void loadDriver() {
+		try {
+			Class.forName(driver);
+		} catch (ClassNotFoundException e) {
+			System.out.println("driver not found");
+			e.printStackTrace();
+		}
+	}
+	
+	
 	public static void main(String []args) {
+		loadDriver();
 		
+		try {
+			Connection con = DriverManager.getConnection(url,user,password);
+			String command = "select * from Employee ;";
+			PreparedStatement pstmt = con.prepareStatement(command);
+			
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				System.out.printf("%s - %s - %s -%d%n",rs.getString("E_NO"),rs.getString("Name"),rs.getString("Job_Title"),rs.getInt("Salary"));
+				
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 }
