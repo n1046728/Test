@@ -2,7 +2,8 @@ package FCB_201901;
 
 public class Choice23_TestTryCatch {
 	public static void main (String[] args) {
-		System.out.print("甲");//甲丙丁
+		//甲丙丁
+		System.out.print("甲");
 		try {
 			int i = 2 / 0;
 			System.out.print("乙");
